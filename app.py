@@ -6,8 +6,12 @@ import numpy as np
 from flask import Flask, request, jsonify
 from io import BytesIO
 from PIL import Image
+from flask_cors import CORS  # Import CORS
 
 app = Flask(__name__)
+
+# Enable CORS for all domains (you can also restrict to specific domains)
+CORS(app)
 
 # Set Tesseract path for Windows users
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
